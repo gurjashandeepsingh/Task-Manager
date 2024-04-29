@@ -1,0 +1,134 @@
+import { body, query, validationResult } from "express-validator";
+import TaskServices from "../services/taskServices.js";
+import { AuthenticationMiddleware } from "../middleware/middleware.js";
+import { logger } from "../winstonLogger.js";
+import express from "express";
+const router = express.Router();
+
+const addTaskValidation = [
+  body("title").notEmpty().withMessage("Provide all parameters"),
+  body("description").notEmpty().withMessage("Provide all parameters"),
+  body("priority").notEmpty().withMessage("Please select priority"),
+  body("dueDate").notEmpty().withMessage("Please provide due date"),
+];
+router.post(
+  "/create",
+  addTaskValidation,
+  new AuthenticationMiddleware().isAuthenticate,
+  async (request, response) => {
+    const validationError = validationResult(request);
+    if (!validationError.isEmpty()) {
+      return response.status(400).json({
+        errors: validationError.array(),
+      });
+    }
+    try {
+      const { title, description, dueDate, priority } = request.body;
+      const user = request.user;
+      const ServiceInstance = await new TaskServices();
+      const result = await ServiceInstance.createTask(
+        title,
+        description,
+        dueDate,
+        priority,
+        user
+      );
+      response.status(200).send(result);
+    } catch (error) {
+      logger.error(error);
+      response.status(400).send(error);
+    }
+  }
+);
+
+router.get(
+  "/alltasks",
+  new AuthenticationMiddleware().isAuthenticate,
+  async (request, response) => {
+    try {
+      const user = request.user;
+      const ServiceInstance = await new TaskServices();
+      const result = await ServiceInstance.getTasks(user);
+      response.status(200).send(result);
+    } catch (error) {
+      logger.error(error);
+      response.status(400).send(error);
+    }
+  }
+);
+
+const getTaskValidation = [
+  query("taskId").notEmpty().withMessage("Provide all parameters"),
+];
+router.get(
+  "/gettask",
+  getTaskValidation,
+  new AuthenticationMiddleware().isAuthenticate,
+  async (request, response) => {
+    const validationError = validationResult(request);
+    if (!validationError.isEmpty()) {
+      return response.status(400).json({
+        errors: validationError.array(),
+      });
+    }
+    try {
+      const { taskId } = request.query;
+      const ServiceInstance = await new TaskServices();
+      const result = await ServiceInstance.getTask(taskId);
+      response.status(200).send(result);
+    } catch (error) {
+      logger.error(error);
+      response.status(400).send(error);
+    }
+  }
+);
+
+const updateTaskValidation = [
+  query("taskId").notEmpty().withMessage("Provide all parameters"),
+];
+router.put(
+  "/update",
+  updateTaskValidation,
+  new AuthenticationMiddleware().isAuthenticate,
+  async (request, response) => {
+    const validationError = validationResult(request);
+    if (!validationError.isEmpty()) {
+      return response.status(400).json({
+        errors: validationError.array(),
+      });
+    }
+    try {
+      const { taskId } = request.query;
+      const ServiceInstance = await new TaskServices();
+      const result = await ServiceInstance.updateTask(taskId, request.body);
+      response.status(200).send(result);
+    } catch (error) {
+      logger.error(error);
+      response.status(400).send(error);
+    }
+  }
+);
+
+router.post(
+  "/delete/:taskId",
+  new AuthenticationMiddleware().isAuthenticate,
+  async (request, response) => {
+    const validationError = validationResult(request);
+    if (!validationError.isEmpty()) {
+      return response.status(400).json({
+        errors: validationError.array(),
+      });
+    }
+    try {
+      const { taskId } = request.params;
+      const ServiceInstance = await new TaskServices();
+      const result = await ServiceInstance.deleteTask(taskId);
+      response.status(200).send(result);
+    } catch (error) {
+      logger.error(error);
+      response.status(400).send(error);
+    }
+  }
+);
+
+export { router as taskRoutes };

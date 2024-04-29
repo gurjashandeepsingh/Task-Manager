@@ -1,0 +1,57 @@
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-25T10:03:23.225Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-25T10:03:23.267Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-25T10:04:24.215Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-25T10:04:24.247Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-25T10:04:37.261Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-25T10:04:37.278Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-25T10:04:50.205Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-25T10:04:50.222Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T09:58:15.511Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T09:58:15.542Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:00:06.803Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:00:06.831Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:00:42.324Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:00:42.351Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:00:50.329Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:00:50.356Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:01:58.643Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:01:58.680Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:03:01.416Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:03:01.445Z"}
+{"level":"error","timestamp":"2024-04-29T10:03:07.729Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:03:20.831Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:03:20.860Z"}
+{"level":"error","timestamp":"2024-04-29T10:03:25.165Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:03:50.150Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:03:50.187Z"}
+{"level":"error","timestamp":"2024-04-29T10:03:52.369Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:04:22.258Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:04:22.284Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:05:07.183Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:05:07.215Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:06:06.460Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:06:06.487Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:09:47.357Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:09:47.383Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:12:35.257Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:12:35.274Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:12:45.621Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:12:45.646Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:13:13.932Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:13:13.953Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:13:32.459Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:13:32.489Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:13:53.062Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:13:53.083Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:14:08.298Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:14:08.318Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:14:22.981Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:14:23.008Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:15:01.829Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:15:01.915Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:17:05.745Z"}
+{"level":"info","message":"Connected to Database MongoDB: Convivity","timestamp":"2024-04-29T10:17:05.775Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:17:24.324Z"}
+{"level":"info","message":"Connected to Database MongoDB: TaskManager-Database","timestamp":"2024-04-29T10:17:24.350Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-04-29T10:18:06.493Z"}
+{"level":"info","message":"Connected to Database MongoDB: TaskManager-Database","timestamp":"2024-04-29T10:18:06.518Z"}
