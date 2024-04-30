@@ -53,6 +53,10 @@ To start the server, run the following command:
 
 The server will start running on port 3000 by default.
 
+To run Tests, run command : 
+
+`npm run test`
+
 # Usage
 
 Steps for Login functionality:
