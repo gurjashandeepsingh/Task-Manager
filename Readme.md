@@ -53,7 +53,7 @@ To start the server, run the following command:
 
 The server will start running on port 3000 by default.
 
-To run Tests, run command : 
+To run Tests, run command :
 
 `npm run test`
 
@@ -70,3 +70,7 @@ Steps for Login functionality:
 `To access most of the routes, you need to pass the JWT Tokens for authorization as most of the routes are protected`
 
 Time taken to complete : 4 Hours
+
+#Documentation
+
+https://docs.google.com/document/d/1pzhXBs673Nr3vr3jM0kaI80bMW8NyNasyrYxZJ72dN0/edit?usp=sharing
