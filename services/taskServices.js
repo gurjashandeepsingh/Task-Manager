@@ -1,5 +1,5 @@
-import { Task } from "../models/taskSchema.js";
-import { User } from "../models/userSchema.js";
+import Task from "../models/taskSchema.js";
+import User from "../models/userSchema.js";
 export default class TaskServices {
   /**
    * Creates a new task with the given parameters.
@@ -13,16 +13,16 @@ export default class TaskServices {
    * @throws {Error} If the task is not created.
    */
   async createTask(title, description, dueDate, priority, user) {
-    const newTask = await new Task({
+    const newTask = {
       title: title,
       description: description,
       creationDate: Date.now(),
       dueDate,
       priority,
       user: user.id,
-    });
+    };
     if (!newTask) throw new Error("Task not created");
-    await newTask.save();
+    await Task.create(newTask);
     return newTask;
   }
 

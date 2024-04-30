@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-class AuthenticationMiddleware {
+export default class AuthenticationMiddleware {
   async generateToken(_id, tokens) {
     try {
       const token = await jwt.sign(
@@ -33,5 +33,3 @@ class AuthenticationMiddleware {
     return response.status(401).send("Token not found in request");
   }
 }
-
-export { AuthenticationMiddleware };

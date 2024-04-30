@@ -1,6 +1,6 @@
-import { User } from "../models/userSchema.js";
+import User from "../models/userSchema.js";
 import bcrypt from "bcrypt";
-import { AuthenticationMiddleware } from "../middleware/middleware.js";
+import AuthenticationMiddleware from "../middleware/middleware.js";
 export default class UserService {
   /**
    * Registers a new user with the provided details.

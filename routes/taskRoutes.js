@@ -1,6 +1,6 @@
 import { body, query, validationResult } from "express-validator";
 import TaskServices from "../services/taskServices.js";
-import { AuthenticationMiddleware } from "../middleware/middleware.js";
+import AuthenticationMiddleware from "../middleware/middleware.js";
 import { logger } from "../winstonLogger.js";
 import express from "express";
 const router = express.Router();
