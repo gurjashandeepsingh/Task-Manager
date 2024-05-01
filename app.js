@@ -4,12 +4,12 @@ import mongoose from "mongoose";
 import { userRoutes } from "./routes/userRoutes.js";
 import { taskRoutes } from "./routes/taskRoutes.js";
 import { logger } from "./winstonLogger.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const baseURL = "/api";
 const port = process.env.PORT || 3000;
-const mongoURI =
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/TaskManager-Database";
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,10 +18,13 @@ app.use(`${baseURL}/task`, taskRoutes);
 
 async function connectToDatabase() {
   try {
-    await mongoose.connect(mongoURI, {
-      useNewUrlParser: true,
-      autoCreate: true,
-    });
+    await mongoose.connect(
+      "mongodb+srv://gurjashandeepsinghwork1:mgWevsT4VObyzbi2@cluster0.gtnw25p.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+      {
+        useNewUrlParser: true,
+        autoCreate: true,
+      }
+    );
     logger.info(`Connected to MongoDB: ${mongoose.connection.db.databaseName}`);
   } catch (error) {
     logger.error("MongoDB connection error:", error);
