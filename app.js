@@ -18,13 +18,10 @@ app.use(`${baseURL}/task`, taskRoutes);
 
 async function connectToDatabase() {
   try {
-    await mongoose.connect(
-      "mongodb+srv://gurjashandeepsinghwork1:mgWevsT4VObyzbi2@cluster0.gtnw25p.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-      {
-        useNewUrlParser: true,
-        autoCreate: true,
-      }
-    );
+    await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      autoCreate: true,
+    });
     logger.info(`Connected to MongoDB: ${mongoose.connection.db.databaseName}`);
   } catch (error) {
     logger.error("MongoDB connection error:", error);
