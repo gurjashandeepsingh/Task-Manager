@@ -114,4 +114,12 @@ export default class TaskServices {
     if (!findTask) throw new Error("Can't find Anything :(");
     return findTask;
   }
+
+  async pagination(pageNumber) {
+    const numberOfDocs = 10;
+    const skipDocs = (pageNumber - 1) * numberOfDocs;
+    const findDocs = await Task.find().skip(skipDocs).limit(numberOfDocs);
+    if (!findDocs) throw new Error(`No tasks found for page: ${pageNumber}`);
+    return findDocs;
+  }
 }

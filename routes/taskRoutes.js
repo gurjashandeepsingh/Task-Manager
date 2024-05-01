@@ -2,7 +2,7 @@ import { body, query, validationResult } from "express-validator";
 import TaskServices from "../services/taskServices.js";
 import AuthenticationMiddleware from "../middleware/middleware.js";
 import { logger } from "../winstonLogger.js";
-import express from "express";
+import express, { request } from "express";
 const router = express.Router();
 
 const addTaskValidation = [
@@ -158,4 +158,19 @@ router.get(
   }
 );
 
+router.get(
+  "/page",
+  new AuthenticationMiddleware().isAuthenticate,
+  async (request, response) => {
+    try {
+      const { pageNumber } = parseInt(request.query);
+      const ServiceInstance = await new TaskServices();
+      const result = await ServiceInstance().pagination(pageNumber);
+      response.status(200).send(result);
+    } catch (error) {
+      console.log(error);
+      response.status(400).send(error);
+    }
+  }
+);
 export { router as taskRoutes };
