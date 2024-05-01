@@ -131,4 +131,31 @@ router.post(
   }
 );
 
+const searchValidation = [
+  query("searchString").notEmpty().withMessage("Provide Search String"),
+];
+router.get(
+  "/search",
+  new AuthenticationMiddleware().isAuthenticate,
+  searchValidation,
+  async (request, response) => {
+    const validationError = validationResult(request);
+    if (!validationError.isEmpty()) {
+      return response.status(400).json({
+        errors: validationError.array(),
+      });
+    }
+    try {
+      const { searchString } = request.query;
+      const user = request.user;
+      const ServiceInstance = await new TaskServices();
+      const result = await ServiceInstance.searchString(searchString, user);
+      response.status(200).send(result);
+    } catch (error) {
+      console.log(error);
+      response.status(400).send(error);
+    }
+  }
+);
+
 export { router as taskRoutes };

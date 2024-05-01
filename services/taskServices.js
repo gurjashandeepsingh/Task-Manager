@@ -99,4 +99,19 @@ export default class TaskServices {
     if (!updatedTask) throw new Error("Couldn't update the task");
     return { deletedTask };
   }
+
+  async searchString(searchString, user) {
+    const regexExpression = new RegExp(`.*(${searchString}).*`, "i");
+    const findTask = await Task.find({
+      user: user.id,
+      $or: [
+        { title: { $regex: regexExpression } },
+        { description: { $regex: regexExpression } },
+        { status: { $regex: regexExpression } },
+        { priority: { $regex: regexExpression } },
+      ],
+    });
+    if (!findTask) throw new Error("Can't find Anything :(");
+    return findTask;
+  }
 }
