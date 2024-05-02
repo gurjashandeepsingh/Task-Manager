@@ -216,6 +216,22 @@ router.post(
   }
 );
 
+router.post(
+  "/priority-percentage",
+  new AuthenticationMiddleware().isAuthenticate,
+  async (request, response) => {
+    try {
+      const user = request.user;
+      const ServiceInstance = await new TaskServices();
+      const result = await ServiceInstance.priorityPercentage(user);
+      response.status(200).send(result);
+    } catch (error) {
+      console.log(error);
+      response.status(400).send(error);
+    }
+  }
+);
+
 const customPercentageValidation = [
   query("days").notEmpty().withMessage("Provide days"),
 ];
@@ -242,4 +258,5 @@ router.post(
     }
   }
 );
+
 export { router as taskRoutes };

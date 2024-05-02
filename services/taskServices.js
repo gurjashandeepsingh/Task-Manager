@@ -169,6 +169,24 @@ export default class TaskServices {
     };
   }
 
+  async priorityPercentage(user) {
+    const allTasks = await Task.find({ user: user.id });
+    const totalTasks = allTasks.length;
+    const lowPriority = allTasks.filter((task) => task.priority === "Low");
+    const mediumPriority = allTasks.filter(
+      (task) => task.priority === "Medium"
+    );
+    const highPriority = allTasks.filter((task) => task.priority === "High");
+    const lowPercentage = (lowPriority.length / totalTasks) * 100;
+    const mediumPercentage = (mediumPriority.length / totalTasks) * 100;
+    const highPercentage = (highPriority.length / totalTasks) * 100;
+    return {
+      Low: lowPercentage,
+      Medium: mediumPercentage,
+      High: highPercentage,
+    };
+  }
+
   /**
    * Calculates the percentage of tasks in different statuses for a given user within a custom time period.
    *
