@@ -18,7 +18,7 @@ app.use(`${baseURL}/task`, taskRoutes);
 
 async function connectToDatabase() {
   try {
-    await mongoose.connect(process.env.MONGODB_URI, {
+    await mongoose.connect(process.env.MONGODB_CLOUD, {
       useNewUrlParser: true,
       autoCreate: true,
     });

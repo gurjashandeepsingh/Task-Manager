@@ -109,6 +109,32 @@ router.put(
   }
 );
 
+const doneTaskValidation = [
+  body("taskId").notEmpty().withMessage("Provide taskId"),
+];
+router.post(
+  "/done",
+  new AuthenticationMiddleware().isAuthenticate,
+  doneTaskValidation,
+  async (request, response) => {
+    const validationError = validationResult(request);
+    if (!validationError.isEmpty()) {
+      return response.status(400).json({
+        errors: validationError.array(),
+      });
+    }
+    try {
+      const { taskId } = request.body;
+      const ServiceInstance = await new TaskServices();
+      const result = await ServiceInstance.doneTask(taskId);
+      response.status(200).send(result);
+    } catch (error) {
+      console.log(error);
+      response.status(400).send(error);
+    }
+  }
+);
+
 router.post(
   "/delete/:taskId",
   new AuthenticationMiddleware().isAuthenticate,
@@ -173,4 +199,5 @@ router.get(
     }
   }
 );
+
 export { router as taskRoutes };

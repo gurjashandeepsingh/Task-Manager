@@ -78,6 +78,25 @@ export default class TaskServices {
   }
 
   /**
+   * Marks a task as completed.
+   *
+   * @param {string} taskId - The ID of the task to mark as completed.
+   * @returns {Promise<object>} The updated task object with the status set to "completed".
+   * @throws {Error} If the task with the specified ID is not found or if the task update fails.
+   */
+  async doneTask(taskId) {
+    const findTask = await Task.findById(taskId);
+    if (!findTask) throw new Error("Could not find Task");
+    const updatedTask = await Task.updateOne(
+      { _id: findTask._id },
+      { status: "completed" },
+      { new: true }
+    );
+    if (!updatedTask) throw new Error("Could not update task");
+    return updatedTask;
+  }
+
+  /**
    * This code snippet represents a method for deleting a task.
    * It throws an error if the task is not found.
    * It updates the task's 'isDeleted' property to true.
