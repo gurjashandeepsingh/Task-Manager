@@ -200,4 +200,20 @@ router.get(
   }
 );
 
+router.post(
+  "/progress-all",
+  new AuthenticationMiddleware().isAuthenticate,
+  async (request, response) => {
+    try {
+      const user = request.user;
+      const ServiceInstance = await new TaskServices();
+      const result = await ServiceInstance.percentageAllTime(user);
+      response.status(200).send(result);
+    } catch (error) {
+      console.log(error);
+      response.status(400).send(error);
+    }
+  }
+);
+
 export { router as taskRoutes };

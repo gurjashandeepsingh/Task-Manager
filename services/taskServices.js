@@ -141,4 +141,24 @@ export default class TaskServices {
     if (!findDocs) throw new Error(`No tasks found for page: ${pageNumber}`);
     return findDocs;
   }
+
+  async percentageAllTime(user) {
+    const allTasks = await Task.find({ user: user.id });
+    const totalTasks = allTasks.length;
+    const pendingTasks = allTasks.filter((task) => task.status === "pending");
+    const inProgressTasks = allTasks.filter(
+      (task) => task.status === "in progress"
+    );
+    const completedTasks = allTasks.filter(
+      (task) => task.status === "completed"
+    );
+    const pendingPercentage = (pendingTasks.length / totalTasks) * 100;
+    const inProgressPercentage = (inProgressTasks.length / totalTasks) * 100;
+    const completedProgress = (completedTasks.length / totalTasks) * 100;
+    return {
+      Pending: pendingPercentage,
+      Progress: inProgressPercentage,
+      Completed: completedProgress,
+    };
+  }
 }
