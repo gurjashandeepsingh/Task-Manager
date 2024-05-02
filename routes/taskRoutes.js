@@ -216,4 +216,30 @@ router.post(
   }
 );
 
+const customPercentageValidation = [
+  query("days").notEmpty().withMessage("Provide days"),
+];
+router.post(
+  "/progress-custom",
+  new AuthenticationMiddleware().isAuthenticate,
+  customPercentageValidation,
+  async (request, response) => {
+    const validationError = validationResult(request);
+    if (!validationError.isEmpty()) {
+      return response.status(400).json({
+        errors: validationError.array(),
+      });
+    }
+    try {
+      const user = request.user;
+      const { days } = request.query;
+      const ServiceInstance = await new TaskServices();
+      const result = await ServiceInstance.percentageAllTime(user, days);
+      response.status(200).send(result);
+    } catch (error) {
+      console.log(error);
+      response.status(400).send(error);
+    }
+  }
+);
 export { router as taskRoutes };

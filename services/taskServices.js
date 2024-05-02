@@ -142,8 +142,48 @@ export default class TaskServices {
     return findDocs;
   }
 
+  /**
+   * Calculates the percentage of tasks in different statuses for a given user.
+   *
+   * @param {User} user - The user object.
+   * @returns {Object} An object containing the percentage of tasks in different statuses.
+   * @throws {Error} If the user is not found or if there are no tasks associated with the user.
+   */
   async percentageAllTime(user) {
     const allTasks = await Task.find({ user: user.id });
+    const totalTasks = allTasks.length;
+    const pendingTasks = allTasks.filter((task) => task.status === "pending");
+    const inProgressTasks = allTasks.filter(
+      (task) => task.status === "in progress"
+    );
+    const completedTasks = allTasks.filter(
+      (task) => task.status === "completed"
+    );
+    const pendingPercentage = (pendingTasks.length / totalTasks) * 100;
+    const inProgressPercentage = (inProgressTasks.length / totalTasks) * 100;
+    const completedProgress = (completedTasks.length / totalTasks) * 100;
+    return {
+      Pending: pendingPercentage,
+      Progress: inProgressPercentage,
+      Completed: completedProgress,
+    };
+  }
+
+  /**
+   * Calculates the percentage of tasks in different statuses for a given user within a custom time period.
+   *
+   * @param {User} user - The user object.
+   * @param {number} days - The number of days to consider in the time period.
+   * @returns {Object} An object containing the percentage of tasks in different statuses.
+   * @throws {Error} If the user is not found or if there are no tasks associated with the user.
+   */
+  async percentageCustomTime(user, days) {
+    const DaysAgo = new Date();
+    DaysAgo.setDate(DaysAgo.getDate() - days);
+    const allTasks = await Task.find({
+      user: user.id,
+      createdAt: { $gte: DaysAgo },
+    });
     const totalTasks = allTasks.length;
     const pendingTasks = allTasks.filter((task) => task.status === "pending");
     const inProgressTasks = allTasks.filter(
