@@ -287,4 +287,20 @@ router.post("/time-start", timeStartValidation, async (request, response) => {
   }
 });
 
+router.post(
+  "/completition-rate",
+  new AuthenticationMiddleware().isAuthenticate,
+  async (request, response) => {
+    try {
+      const user = request.user;
+      const ServiceInstance = await new TaskServices();
+      const result = await ServiceInstance.completitionRate();
+      response.status(200).send(result);
+    } catch (error) {
+      console.log(error);
+      response.status(400).send(error);
+    }
+  }
+);
+
 export { router as taskRoutes };

@@ -251,4 +251,12 @@ export default class TaskServices {
     await findTask.save();
     return findTask;
   }
+
+  async completitionRate(user) {
+    const allTasks = await Task.find({ user: user.id });
+    const totalTasks = allTasks.length;
+    const completedTasks = allTasks.filter((task) => task.status === completed);
+    const completedPercentage = (completedTasks.length / totalTasks) * 100;
+    return completedPercentage;
+  }
 }
