@@ -1,5 +1,6 @@
 import Task from "../models/taskSchema.js";
 import User from "../models/userSchema.js";
+import TimeTrack from "../models/taskTimeTrackingModel.js";
 export default class TaskServices {
   /**
    * Creates a new task with the given parameters.
@@ -13,17 +14,17 @@ export default class TaskServices {
    * @throws {Error} If the task is not created.
    */
   async createTask(title, description, dueDate, priority, user) {
-    const newTask = {
-      title: title,
-      description: description,
+    const newTask = new Task({
+      title,
+      description,
       creationDate: Date.now(),
       dueDate,
       priority,
       user: user.id,
-    };
+    });
     if (!newTask) throw new Error("Task not created");
-    await Task.create(newTask);
-    return newTask;
+    await newTask.save();
+    return { newTask };
   }
 
   /**
@@ -218,5 +219,33 @@ export default class TaskServices {
       Progress: inProgressPercentage,
       Completed: completedProgress,
     };
+  }
+
+  /**
+   * Calculates the duration of a task and updates the time tracking record.
+   *
+   * @param {string} taskId - The ID of the task.
+   * @param {Date} startTime - The start time of the task.
+   * @param {Date} endTime - The end time of the task.
+   * @returns {Promise<TimeTrack>} The updated time tracking record.
+   */
+  async timeDuration(taskId, startTime, endTime) {
+    const duration = endTime - startTime;
+    const findTask = await TimeTrack.findOne({ taskId });
+    if (!findTask) {
+      const newTimer = await new TimeTrack({
+        taskId,
+        startTime,
+        endTime,
+        duration,
+      });
+      await newTimer.save();
+      return newTimer;
+    }
+    findTask.startTime = startTime;
+    findTask.endTime = endTime;
+    findTask.duration = duration;
+    await findTask.save();
+    return findTask;
   }
 }

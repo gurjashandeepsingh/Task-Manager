@@ -126,3 +126,95 @@
 {"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-02T11:10:49.577Z"}
 {"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-02T11:11:55.289Z"}
 {"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-02T11:11:55.295Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-02T12:05:45.399Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-02T12:05:45.408Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-02T12:07:17.863Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-02T12:07:17.869Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-02T12:10:12.795Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-02T12:10:12.815Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T09:39:02.688Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T09:39:02.694Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T09:39:22.141Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T09:39:22.149Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T09:39:48.146Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T09:39:48.152Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T09:53:45.082Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T09:53:45.090Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:11:39.253Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:11:39.262Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:12:13.959Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:12:13.965Z"}
+{"_message":"Task validation failed","errors":{"priority":{"kind":"enum","message":"`Top` is not a valid enum value for path `priority`.","name":"ValidatorError","path":"priority","properties":{"enumValues":["High","Medium","Low"],"message":"`Top` is not a valid enum value for path `priority`.","path":"priority","type":"enum","value":"Top"},"value":"Top"}},"level":"error","message":"Task validation failed: priority: `Top` is not a valid enum value for path `priority`.","name":"ValidationError","timestamp":"2024-05-03T10:18:13.438Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:18:59.355Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:18:59.361Z"}
+{"level":"error","timestamp":"2024-05-03T10:19:00.057Z"}
+{"level":"error","timestamp":"2024-05-03T10:19:10.371Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:20:12.845Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:20:12.852Z"}
+{"level":"error","timestamp":"2024-05-03T10:20:19.696Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:20:39.926Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:20:39.932Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:21:06.839Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:21:06.848Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:21:50.087Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:21:50.092Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:22:34.711Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:22:34.726Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:22:52.730Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:22:52.736Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:23:26.378Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:23:26.385Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:24:38.912Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:24:38.917Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:24:43.883Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:24:43.889Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:25:18.156Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:25:18.169Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:26:09.387Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:26:09.393Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:27:02.279Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:27:02.286Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:27:32.433Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:27:32.442Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:28:06.058Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:28:06.065Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:28:19.934Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:28:19.940Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:28:46.667Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:28:46.675Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:29:30.372Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:29:30.378Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:29:49.108Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:29:49.113Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:30:51.381Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:30:51.397Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:31:28.739Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:31:28.745Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:31:54.335Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:31:54.343Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:33:14.095Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:33:14.100Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:38:05.251Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:38:05.258Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:38:31.557Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:38:31.566Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:38:50.147Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:38:50.153Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:39:27.228Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:39:27.234Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:39:47.436Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:39:47.442Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:40:11.562Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:40:11.570Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:41:33.341Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:41:33.346Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:42:13.228Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:42:13.233Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:42:55.879Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:42:55.886Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:44:00.167Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:44:00.173Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:45:27.702Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:45:27.707Z"}
+{"level":"info","message":"Connected to MongoDB: TaskManager-Database","timestamp":"2024-05-03T10:45:36.174Z"}
+{"level":"info","message":"Server is running at port 3000","timestamp":"2024-05-03T10:45:36.179Z"}

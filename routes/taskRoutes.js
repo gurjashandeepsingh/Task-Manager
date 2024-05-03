@@ -35,7 +35,7 @@ router.post(
       );
       response.status(200).send(result);
     } catch (error) {
-      logger.error(error);
+      console.log(error);
       response.status(400).send(error);
     }
   }
@@ -258,5 +258,33 @@ router.post(
     }
   }
 );
+
+const timeStartValidation = [
+  body("taskId").notEmpty().withMessage("Provide TaskId"),
+  body("startTime").notEmpty().withMessage("Provide Start Time"),
+  body("endTime").notEmpty().withMessage("Provide End Time"),
+];
+router.post("/time-start", timeStartValidation, async (request, response) => {
+  const validationError = validationResult(request);
+  if (!validationError.isEmpty()) {
+    return response.status(400).json({
+      errors: validationError.array(),
+    });
+  }
+  try {
+    // const { taskId } = request.query;
+    const { taskId, startTime, endTime } = request.body;
+    const ServiceInstance = await new TaskServices();
+    const result = await ServiceInstance.timeDuration(
+      taskId,
+      startTime,
+      endTime
+    );
+    response.status(200).send(result);
+  } catch (error) {
+    console.log(error);
+    response.status(400).send(error);
+  }
+});
 
 export { router as taskRoutes };
