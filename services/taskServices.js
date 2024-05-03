@@ -2,6 +2,9 @@ import Task from "../models/taskSchema.js";
 import User from "../models/userSchema.js";
 import TimeTrack from "../models/taskTimeTrackingModel.js";
 export default class TaskServices {
+  // 1st 6 APIs comprise of CRUD Operations on Tasks
+  // After 6th Api, I have added Analytics and more advanced computations
+
   /**
    * Creates a new task with the given parameters.
    *
